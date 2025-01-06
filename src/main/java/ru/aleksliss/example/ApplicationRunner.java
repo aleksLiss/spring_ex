@@ -2,16 +2,14 @@ package ru.aleksliss.example;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ru.aleksliss.example.database.pool.ConnectionPool;
-import ru.aleksliss.example.database.repository.CompanyRepository;
 
 public class ApplicationRunner {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
         System.out.println(context.getBean("p11", ConnectionPool.class));
-//        System.out.println(context.getBean("p11", ConnectionPool.class).getProperties());
-
-        CompanyRepository companyRepository = context.getBean("companyRepository", CompanyRepository.class);
-//        System.out.println(companyRepository);
-    context.close();
+        context.getBean("p1", ConnectionPool.class)
+                .getProperties()
+                .forEach((k, v) -> System.out.println(v));
+        context.close();
     }
 }
