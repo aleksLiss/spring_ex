@@ -8,7 +8,7 @@ public class ApplicationRunner {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
         System.out.println(context.getBean("p11", ConnectionPool.class));
-
+        System.out.println(context.getBean("p11", ConnectionPool.class).getProperties());
 
         CompanyRepository companyRepository = context.getBean("companyRepository", CompanyRepository.class);
         System.out.println(companyRepository);
