@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
     <bean id="driver" class="java.lang.String">
-        <constructor-arg type="java.lang.String" value="Hello"/>
+        <constructor-arg type="java.lang.String" value="Driver"/>
     </bean>
     <bean id="pool1" name="p1, p11" class="ru.aleksliss.example.database.pool.ConnectionPool">
         <constructor-arg index="0" value="postgres"/>
@@ -25,4 +25,7 @@
             </map>
         </constructor-arg>
     </bean>
-</beans>
+    <bean id="companyRepository" class="ru.aleksliss.example.database.repository.CompanyRepository" factory-method="of">
+        <constructor-arg ref="p1"/>
+    </bean>
+ </beans>
