@@ -24,4 +24,8 @@ public class ConnectionPool {
     public Map<String, Object> getProperties() {
         return properties;
     }
+
+    private void init() {
+        System.out.println("Init connection pool");
+    }
 }

@@ -9,7 +9,9 @@
     <bean id="driver" class="java.lang.String" scope="prototype">
         <constructor-arg type="java.lang.String" value="Driver"/>
     </bean>
-    <bean id="pool1" name="p1, p11" class="ru.aleksliss.example.database.pool.ConnectionPool">
+    <bean id="pool1" name="p1, p11" class="ru.aleksliss.example.database.pool.ConnectionPool"
+    init-method="init"
+    scope="singleton">
         <constructor-arg index="0" value="postgres"/>
         <constructor-arg index="1" value="10"/>
         <constructor-arg index="2">
