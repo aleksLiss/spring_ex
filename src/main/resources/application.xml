@@ -7,13 +7,11 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
     <context:property-placeholder location="classpath:application.properties"/>
-
-    <bean id="driver" class="java.lang.String">
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+     <bean id="driver" class="java.lang.String">
         <constructor-arg type="java.lang.String" value="${db.driver}"/>
     </bean>
-    <bean id="pool1" name="p1, p11" class="ru.aleksliss.example.database.pool.ConnectionPool"
-    destroy-method="destroy"
-    scope="singleton">
+    <bean id="pool1" name="p1, p11" class="ru.aleksliss.example.database.pool.ConnectionPool">
         <constructor-arg index="0" value="postgres"/>
         <constructor-arg index="1" value="10"/>
         <constructor-arg index="2">
