@@ -6,8 +6,8 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config/>
     <context:property-placeholder location="classpath:application.properties"/>
-    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
      <bean id="driver" class="java.lang.String">
         <constructor-arg type="java.lang.String" value="${db.driver}"/>
     </bean>
