@@ -28,4 +28,8 @@ public class ConnectionPool {
     private void init() {
         System.out.println("Init connection pool");
     }
-}
+
+    private void destroy() {
+        System.out.println("Destroy connection pool");
+    }
+ }
